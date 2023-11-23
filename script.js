@@ -24,11 +24,13 @@ for (let i = 0; i < pads.length; i++){
 }
 
 document.addEventListener("keydown", function(event){
+    const key = event.key.toLowerCase();
+    // console.log(key)
     document.querySelector("#key").value = key;
     const audio = audioMap[key];
     if (audio){
         playAudio(audio);
-        const  pad = Array.from(pads).find(pad => pad.innerHTML.toLowerCase() === key);
+        const pad = Array.from(pads).find(pad => pad.innerHTML.toLowerCase() === key);
     }
 })
 
